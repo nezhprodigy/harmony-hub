@@ -11,6 +11,10 @@ const NavBar = ({ keyword, handleKeyPress, setKeyword, fetchMusicData }) => {
         <a className="navbar-brand" href="/">
           <img src="logo.png" alt="Harmony Hub" /> Harmony-Hub
         </a>
+        <div>
+        <Link className="navbar-brand"  exact to="/about">
+                About
+          </Link></div>     
         <div className="dropdown">
           <button
             className="btn btn-sm btn-secondary dropdown-toggle"
@@ -18,7 +22,7 @@ const NavBar = ({ keyword, handleKeyPress, setKeyword, fetchMusicData }) => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Liked Music
+            Favorite Music
           </button>
           <ul className="dropdown-menu">
             <li>
@@ -27,10 +31,10 @@ const NavBar = ({ keyword, handleKeyPress, setKeyword, fetchMusicData }) => {
               </a>
             </li>
             <li>
-              <Link className="dropdown-item" to="/likedMusic">
+              <Link className="dropdown-item" exact to="/likedMusic">
                 Liked Music
               </Link>
-            </li>
+            </li>            
             <li>
               <button
                 type="button"
@@ -41,8 +45,9 @@ const NavBar = ({ keyword, handleKeyPress, setKeyword, fetchMusicData }) => {
                 Create new
               </button>
             </li>
-          </ul>
-        </div>
+          </ul>          
+        </div> 
+               
 
         <div
           className="collapse navbar-collapse d-flex justify-content-center"
